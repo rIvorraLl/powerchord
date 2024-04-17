@@ -4,10 +4,10 @@ import java.util.regex.Pattern;
 
 import com.powerchord.models.User;
 
-
 public class UserValidator {
 	/**
 	 * Validate the User fields
+	 * 
 	 * @param user
 	 * @return boolean
 	 */
