@@ -4,13 +4,14 @@ import java.util.regex.Pattern;
 
 import com.powerchord.models.User;
 
-public class UserValidator {
+public class UserValidator implements Validator<User> {
 	/**
 	 * Validate the User fields
 	 * 
 	 * @param user
 	 * @return boolean
 	 */
+	@Override
 	public boolean validate(User user) {
 		if (user.getName().length() < 4 || user.getName().length() > 50) {
 			return false;

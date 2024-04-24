@@ -26,25 +26,22 @@ public class DbConnection {
 
 	private DbConnection() {
 		try {
-			Class.forName("org.postgresql.Driver");
-            System.setErr(new PrintStream(new FileOutputStream(System.getProperty("user.home") + "/error.log"), true));
-            connection = DriverManager.getConnection(url, user, password);
+			System.setErr(new PrintStream(new FileOutputStream(System.getProperty("user.home") + "/error.log"), true));
+			connection = DriverManager.getConnection(url, user, password);
 		} catch (IOException e) {
 			throw new RuntimeException("Failed to load database properties", e);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static synchronized DbConnection getInstance() {
 		if (instance == null) {
 			instance = new DbConnection();
 		}
 		return instance;
 	}
-	
+
 	public Connection getConnection() {
 		return connection;
 	}

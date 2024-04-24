@@ -29,7 +29,6 @@ public class UserLoginServlet extends HttpServlet {
 		if (hashedInputPassword.equals(storedHashedPassword)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("name", inputName);
-			System.out.println(session.getAttribute("name"));
 			response.sendRedirect("app/main.jsp");
 		} else {
 			request.setAttribute("errorMessage", "Invalid user name or password.");

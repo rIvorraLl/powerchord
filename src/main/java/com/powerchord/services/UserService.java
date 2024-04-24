@@ -12,16 +12,18 @@ import com.powerchord.utils.db.DbConnection;
 import com.powerchord.utils.db.sql.SqlStatements;
 
 public class UserService {
-	private static Connection conn;
 	private UserValidator userValidator;
 
+	/**
+	 * Default constructor
+	 */
 	public UserService() {
-		UserService.conn = DbConnection.getInstance().getConnection();
 		this.userValidator = new UserValidator();
 	}
 
 	/**
 	 * Register the user
+	 * 
 	 * @param user
 	 * @return boolean
 	 */
@@ -29,6 +31,7 @@ public class UserService {
 		if (!userValidator.validate(user)) {
 			return false;
 		}
+		Connection conn = DbConnection.getInstance().getConnection();
 		String sql = SqlStatements.INSERT_USER;
 		try (PreparedStatement statement = conn.prepareStatement(sql)) {
 			Timestamp ts = user.getCreatedAt();
@@ -43,20 +46,22 @@ public class UserService {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Get the user by name
+	 * 
 	 * @param username
 	 * @return User
 	 */
 	public User getUserByName(String username) {
 		String sql = SqlStatements.GET_USER_BY_NAME;
+		Connection conn = DbConnection.getInstance().getConnection();
 		try (PreparedStatement statement = conn.prepareStatement(sql)) {
 			statement.setString(1, username);
 			ResultSet rs = statement.executeQuery();
 			while (rs.next()) {
 				String name = rs.getString("name");
-				String  password = rs.getString("password");
+				String password = rs.getString("password");
 				String email = rs.getString("email");
 				return new User(name, email, password);
 			}

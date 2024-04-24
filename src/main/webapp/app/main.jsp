@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/components/toolbar.css">
 </head>
 <body>
+	<jsp:include page="/components/toolbar.jsp" />
 	<%
 	String username = (String) session.getAttribute("name");
 	%>
 	<p>
-		Welcome,
+		Welcome, 
 		<%=username%></p>
 </body>
 </html>

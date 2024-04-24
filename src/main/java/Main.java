@@ -1,6 +1,6 @@
 
-//import java.io.IOException;
 import java.io.IOException;
+//import java.io.IOException;
 //import java.sql.ResultSet;
 //import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -8,8 +8,10 @@ import java.sql.SQLException;
 //import java.util.stream.Collectors;
 //import java.util.stream.IntStream;
 
-import com.powerchord.models.User;
-import com.powerchord.services.UserService;
+//import com.powerchord.models.Genre;
+//import com.powerchord.models.User;
+//import com.powerchord.services.GenreService;
+//import com.powerchord.services.UserService;
 //import com.powerchord.services.UserValidator;
 //import com.powerchord.utils.PasswordUtils;
 //import com.powerchord.utils.db.DbConnection;
@@ -39,10 +41,15 @@ public class Main {
 //		us.create(user);
 
 		// Get one user
-		String name = "catlina";
-		UserService us = new UserService();
-		User user = us.getUserByName(name);
-		System.out.println(user.getName());
+//		String name = "catlina";
+//		UserService us = new UserService();
+//		User user = us.getUserByName(name);
+//		System.out.println(user.getName());
+		
+//		Genre genre = new Genre("rock");
+//		GenreService gs = new GenreService();
+//		boolean isGsCreated = gs.createGenre(genre);
+//		System.out.println(isGsCreated);
 
 	}
 }
