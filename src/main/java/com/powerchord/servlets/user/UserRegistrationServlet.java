@@ -43,9 +43,9 @@ public class UserRegistrationServlet extends HttpServlet {
 
 		boolean isRegistered = userService.create(user);
 		if (isRegistered) {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("auth/login.jsp");
 		} else {
-			response.sendRedirect("loginerror.jsp");
+			response.sendRedirect("auth/register.jsp");
 		}
 	}
 

@@ -40,4 +40,24 @@
 		<filter-name>AuthenticationFilter</filter-name>
 		<url-pattern>/app/*</url-pattern>
 	</filter-mapping>
+	<servlet>
+		<description></description>
+		<display-name>CreateGenreServlet</display-name>
+		<servlet-name>CreateGenreServlet</servlet-name>
+		<servlet-class>com.powerchord.servlets.genre.CreateGenreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateGenreServlet</servlet-name>
+		<url-pattern>/CreateGenreServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>GetAllGenresServlet</display-name>
+		<servlet-name>GetAllGenresServlet</servlet-name>
+		<servlet-class>com.powerchord.servlets.genre.GetAllGenresServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetAllGenresServlet</servlet-name>
+		<url-pattern>/GetAllGenresServlet</url-pattern>
+	</servlet-mapping>
 </web-app>

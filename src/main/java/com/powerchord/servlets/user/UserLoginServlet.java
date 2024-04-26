@@ -32,7 +32,7 @@ public class UserLoginServlet extends HttpServlet {
 			response.sendRedirect("app/main.jsp");
 		} else {
 			request.setAttribute("errorMessage", "Invalid user name or password.");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("auth/login.jsp").forward(request, response);
 		}
 		
 	}

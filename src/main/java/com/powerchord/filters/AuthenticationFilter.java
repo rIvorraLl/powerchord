@@ -25,7 +25,7 @@ public class AuthenticationFilter implements Filter {
 		if (request.getSession(false) != null && request.getSession().getAttribute("name") != null) {
 			chain.doFilter(req, resp);
 		} else {
-			response.sendRedirect(request.getContextPath() + "/login.jsp");
+			response.sendRedirect(request.getContextPath() + "/auth/login.jsp");
 		}
 	}
 

@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" type="text/css" href="css/components/form.css">
+<link rel="stylesheet" type="text/css" href="../css/components/form.css">
 <link rel="stylesheet" type="text/css"
-	href="css/layouts/centered-form.css">
+	href="../css/layouts/centered-form.css">
 </head>
 <body>
 	<main>
 		<h2 class="form-register-title">Login</h2>
-		<form action="UserLoginServlet" method="post">
+		<form action="../UserLoginServlet" method="post">
 			<label for="name">Username:</label> <input type="text" id="name"
 				class="form-input" name="name" required> <br> <label
 				for="password">Password:</label> <input type="password"

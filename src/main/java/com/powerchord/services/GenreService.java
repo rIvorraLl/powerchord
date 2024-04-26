@@ -2,7 +2,10 @@ package com.powerchord.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.powerchord.models.Genre;
 import com.powerchord.utils.db.DbConnection;
@@ -10,15 +13,21 @@ import com.powerchord.utils.db.sql.SqlStatements;
 
 public class GenreService {
 	private GenreValidator genreValidator;
-	
+
 	/**
 	 * Default constructor
 	 */
 	public GenreService() {
 		this.genreValidator = new GenreValidator();
 	}
-	
-	public boolean createGenre(Genre genre) {
+
+	/**
+	 * Create new genre
+	 * 
+	 * @param genre
+	 * @return
+	 */
+	public boolean create(Genre genre) {
 		if (!genreValidator.validate(genre)) {
 			return false;
 		}
@@ -32,5 +41,29 @@ public class GenreService {
 			e.printStackTrace();
 		}
 		return true;
+	}
+
+	/**
+	 * Get all genres
+	 * 
+	 * @return List<Genre>
+	 */
+	public List<Genre> getAll() {
+		List<Genre> genres = new ArrayList<Genre>();
+		String sql = SqlStatements.GET_ALL_GENRES;
+		Connection conn = DbConnection.getInstance().getConnection();
+		try (PreparedStatement statement = conn.prepareStatement(sql)) {
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				String name = rs.getString("genre_name");
+				genres.add(new Genre(name));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		genres.forEach(genre -> {
+			System.out.println(genre.getGenreName());
+		});
+		return genres;
 	}
 }

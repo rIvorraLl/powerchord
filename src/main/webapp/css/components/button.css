@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.generic-button {
+	margin-top: 5px;
+	background-color: #1c71d8;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.generic-button:hover {
+	background-color: #62a0ea;
+}

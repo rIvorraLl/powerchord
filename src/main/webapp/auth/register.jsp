@@ -4,14 +4,14 @@
 <html>
 <head>
 <title>Register</title>
-<link rel="stylesheet" type="text/css" href="css/components/form.css">
+<link rel="stylesheet" type="text/css" href="../css/components/form.css">
 <link rel="stylesheet" type="text/css"
-	href="css/layouts/centered-form.css">
+	href="../css/layouts/centered-form.css">
 </head>
 <body>
 	<main>
 		<h2 class="form-register-title">Register</h2>
-		<form action="UserRegistrationServlet" method="post">
+		<form action="../UserRegistrationServlet" method="post">
 			<label for="name">Name:</label><br> <input class="form-input"
 				type="text" id="name" name="name" required><br> <label
 				for="email">Email:</label><br> <input class="form-input"
