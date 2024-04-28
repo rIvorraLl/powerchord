@@ -11,7 +11,7 @@ import com.powerchord.models.Genre;
 import com.powerchord.utils.db.DbConnection;
 import com.powerchord.utils.db.sql.SqlStatements;
 
-public class GenreService {
+public class GenreService implements Serviceable<Genre> {
 	private GenreValidator genreValidator;
 
 	/**
@@ -34,7 +34,7 @@ public class GenreService {
 		Connection conn = DbConnection.getInstance().getConnection();
 		String sql = SqlStatements.INSERT_GENRE;
 		try (PreparedStatement statement = conn.prepareStatement(sql)) {
-			statement.setString(1, genre.getGenreName());
+			statement.setString(1, genre.getGenreName().toLowerCase());
 			int rowsInserted = statement.executeUpdate();
 			return rowsInserted > 0;
 		} catch (SQLException e) {
@@ -65,5 +65,23 @@ public class GenreService {
 			System.out.println(genre.getGenreName());
 		});
 		return genres;
+	}
+
+	@Override
+	public Genre getOne(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(Genre genre) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

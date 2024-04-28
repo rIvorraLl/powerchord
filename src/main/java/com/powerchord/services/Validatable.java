@@ -1,5 +1,5 @@
 package com.powerchord.services;
 
-public interface Validator<T> {
+public interface Validatable<T> {
 	boolean validate(T object);
 }

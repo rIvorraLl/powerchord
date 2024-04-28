@@ -10,22 +10,21 @@ import java.io.IOException;
 
 import com.powerchord.models.Genre;
 import com.powerchord.services.GenreService;
+import com.powerchord.services.Serviceable;
+import com.powerchord.utils.ServiceFactory;
 
 /**
  * Servlet implementation class CreateGenreServlet
  */
 public class CreateGenreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private GenreService genreService = new GenreService();
+	private Serviceable<Genre> genreService;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public CreateGenreServlet() {
-    }
-    
-    public CreateGenreServlet(GenreService genreService) {
-    	this.genreService = genreService;
+    	this.genreService = ServiceFactory.getService(Genre.class);
     }
 
 	/**

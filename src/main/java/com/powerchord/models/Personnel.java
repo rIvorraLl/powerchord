@@ -5,7 +5,7 @@ public class Personnel {
 	private String name;
 	private String biography;
 	private Long countryId;
-	
+
 	/**
 	 * Constructor with no params
 	 */
@@ -14,6 +14,7 @@ public class Personnel {
 
 	/**
 	 * Constructor with all params
+	 * 
 	 * @param personnelId
 	 * @param name
 	 * @param biography
@@ -21,6 +22,19 @@ public class Personnel {
 	 */
 	public Personnel(Long personnelId, String name, String biography, Long countryId) {
 		this.personnelId = personnelId;
+		this.name = name;
+		this.biography = biography;
+		this.countryId = countryId;
+	}
+
+	/**
+	 * Constructor with no personnelId
+	 * 
+	 * @param name
+	 * @param biography
+	 * @param countryId
+	 */
+	public Personnel(String name, String biography, Long countryId) {
 		this.name = name;
 		this.biography = biography;
 		this.countryId = countryId;

@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import com.powerchord.models.User;
 
-public class UserValidator implements Validator<User> {
+public class UserValidator implements Validatable<User> {
 	/**
 	 * Validate the User fields
 	 * 

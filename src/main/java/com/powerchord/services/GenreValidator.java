@@ -2,7 +2,7 @@ package com.powerchord.services;
 
 import com.powerchord.models.Genre;
 
-public class GenreValidator implements Validator<Genre> {
+public class GenreValidator implements Validatable<Genre> {
 
 	/**
 	 * Validate the genre
