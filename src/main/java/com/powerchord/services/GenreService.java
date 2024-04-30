@@ -25,8 +25,9 @@ public class GenreService implements Serviceable<Genre> {
 	 * Create new genre
 	 * 
 	 * @param genre
-	 * @return
+	 * @return boolean
 	 */
+	@Override
 	public boolean create(Genre genre) {
 		if (!genreValidator.validate(genre)) {
 			return false;
@@ -48,6 +49,7 @@ public class GenreService implements Serviceable<Genre> {
 	 * 
 	 * @return List<Genre>
 	 */
+	@Override
 	public List<Genre> getAll() {
 		List<Genre> genres = new ArrayList<Genre>();
 		String sql = SqlStatements.GET_ALL_GENRES;
@@ -61,15 +63,26 @@ public class GenreService implements Serviceable<Genre> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		genres.forEach(genre -> {
-			System.out.println(genre.getGenreName());
-		});
 		return genres;
 	}
 
 	@Override
-	public Genre getOne(int id) {
-		// TODO Auto-generated method stub
+	public Genre getOne(Long id) {
+		String sql = SqlStatements.GET_ONE_GENRE;
+		Connection conn = DbConnection.getInstance().getConnection();
+		try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+			preparedStatement.setLong(1, id);
+			System.out.println(preparedStatement);
+			try (ResultSet resultSet = preparedStatement.executeQuery()) {
+
+				if (resultSet.next()) {
+					return new Genre(resultSet.getLong("genre_id"), resultSet.getString("genre_name"));
+				}
+			}
+		} catch (SQLException ex) {
+			System.err.println("Error reading genre: " + ex.getMessage());
+			throw new RuntimeException(ex);
+		}
 		return null;
 	}
 
@@ -80,7 +93,7 @@ public class GenreService implements Serviceable<Genre> {
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(Long id) {
 		// TODO Auto-generated method stub
 		return false;
 	}

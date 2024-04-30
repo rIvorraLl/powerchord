@@ -9,14 +9,22 @@ import java.io.IOException;
 import java.util.List;
 
 import com.powerchord.models.Genre;
-import com.powerchord.services.GenreService;
+import com.powerchord.services.Serviceable;
+import com.powerchord.utils.ServiceFactory;
 
 /**
  * Servlet implementation class GetAllGenresServlet
  */
 public class GetAllGenresServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private GenreService genreService = new GenreService();
+	private transient Serviceable<Genre> genreService;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public GetAllGenresServlet() {
+		this.genreService = ServiceFactory.getService(Genre.class);
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse

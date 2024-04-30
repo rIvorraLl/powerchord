@@ -1,24 +1,23 @@
 package com.powerchord.servlets.genre;
 
+import java.io.IOException;
+
+import com.powerchord.models.Genre;
+import com.powerchord.services.Serviceable;
+import com.powerchord.utils.ServiceFactory;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import java.io.IOException;
-
-import com.powerchord.models.Genre;
-import com.powerchord.services.GenreService;
-import com.powerchord.services.Serviceable;
-import com.powerchord.utils.ServiceFactory;
-
 /**
  * Servlet implementation class CreateGenreServlet
  */
 public class CreateGenreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Serviceable<Genre> genreService;
+	private transient Serviceable<Genre> genreService;
        
     /**
      * @see HttpServlet#HttpServlet()
