@@ -14,7 +14,7 @@ public class SqlStatements {
 	// Role
 	public static final String INSERT_ROLE = "INSERT INTO roles (role_name) VALUES (?)";
 	// Personnel
-	public static final String INSERT_PERSONNEL = "INSERT INTO personnel (\n" + "    name, \n" + "    biography, \n"
-			+ "    country_id, \n" + "    img_path)\n" + "VALUES (?, ?, ?, ?);";
+	public static final String INSERT_PERSONNEL = "INSERT INTO personnel (name, biography, country_id, img_path)\n"
+			+ "VALUES (?, ?, ?, ?);";
 
 }

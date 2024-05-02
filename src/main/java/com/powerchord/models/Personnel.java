@@ -36,6 +36,7 @@ public class Personnel {
 	 * @param name
 	 * @param biography
 	 * @param countryId
+	 * @param imgPath
 	 */
 	public Personnel(String name, String biography, Long countryId, String imgPath) {
 		this.name = name;
