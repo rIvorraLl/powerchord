@@ -5,6 +5,7 @@ public class Personnel {
 	private String name;
 	private String biography;
 	private Long countryId;
+	private String imgPath;
 
 	/**
 	 * Constructor with no params
@@ -19,12 +20,14 @@ public class Personnel {
 	 * @param name
 	 * @param biography
 	 * @param countryId
+	 * @param imgPath
 	 */
-	public Personnel(Long personnelId, String name, String biography, Long countryId) {
+	public Personnel(Long personnelId, String name, String biography, Long countryId, String imgPath) {
 		this.personnelId = personnelId;
 		this.name = name;
 		this.biography = biography;
 		this.countryId = countryId;
+		this.imgPath = imgPath;
 	}
 
 	/**
@@ -34,10 +37,11 @@ public class Personnel {
 	 * @param biography
 	 * @param countryId
 	 */
-	public Personnel(String name, String biography, Long countryId) {
+	public Personnel(String name, String biography, Long countryId, String imgPath) {
 		this.name = name;
 		this.biography = biography;
 		this.countryId = countryId;
+		this.imgPath = imgPath;
 	}
 
 	/**
@@ -94,5 +98,19 @@ public class Personnel {
 	 */
 	public void setCountryId(Long countryId) {
 		this.countryId = countryId;
+	}
+
+	/**
+	 * @return the imgPath
+	 */
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	/**
+	 * @param imgPath the imgPath to set
+	 */
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 }

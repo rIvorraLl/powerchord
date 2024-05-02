@@ -3,18 +3,21 @@ import java.io.IOException;
 //import java.sql.ResultSet;
 //import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+
+import com.powerchord.models.Role;
+import com.powerchord.services.RoleService;
 //import java.util.List;
 //import java.util.stream.Collectors;
 //import java.util.stream.IntStream;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
-import com.powerchord.models.Country;
-import com.powerchord.models.Genre;
-import com.powerchord.services.CountryService;
+//import com.powerchord.models.Country;
+//import com.powerchord.models.Genre;
+//import com.powerchord.services.CountryService;
 //import com.powerchord.models.Genre;
 //import com.powerchord.models.User;
-import com.powerchord.services.GenreService;
+//import com.powerchord.services.GenreService;
 //import com.powerchord.services.UserService;
 //import com.powerchord.services.UserValidator;
 //import com.powerchord.utils.PasswordUtils;
@@ -54,11 +57,17 @@ public class Main {
 //		System.out.println(gr.getGenreName());
 //		System.out.println(gr.getGenreId());
 //		
-		CountryService cs = new CountryService();
-		List<Country> ca = cs.getAll();
-		ca.forEach(c -> {
-			System.out.println(c.getCountryName());
-		});
+//		CountryService cs = new CountryService();
+//		List<Country> ca = cs.getAll();
+//		ca.forEach(c -> {
+//			System.out.println(c.getCountryId());
+//			System.out.println(c.getCountryName());
+//		});
+		
+		Role role = new Role("Singer");
+		RoleService rs = new RoleService();
+		boolean isRoleCreated = rs.create(role);
+		System.out.println(isRoleCreated);
 
 	}
 }

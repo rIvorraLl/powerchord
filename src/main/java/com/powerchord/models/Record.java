@@ -8,7 +8,7 @@ public class Record {
 	private Date releaseDate;
 	private Long genreId;
 	private Long labelId;
-	private String imgUrl;
+	private String imgPath;
 
 	/**
 	 * Constructor with no params
@@ -24,7 +24,7 @@ public class Record {
 	 * @param releaseDate
 	 * @param genreId
 	 * @param labelId
-	 * @param imgUrl
+	 * @param imgPath
 	 */
 	public Record(Long recordId, String title, Date releaseDate, Long genreId, Long labelId, String imgUrl) {
 		super();
@@ -33,7 +33,7 @@ public class Record {
 		this.releaseDate = releaseDate;
 		this.genreId = genreId;
 		this.labelId = labelId;
-		this.imgUrl = imgUrl;
+		this.imgPath = imgUrl;
 	}
 
 	/**
@@ -107,17 +107,17 @@ public class Record {
 	}
 
 	/**
-	 * @return the imgUrl
+	 * @return the imgPath
 	 */
-	public String getImgUrl() {
-		return imgUrl;
+	public String getImgPath() {
+		return imgPath;
 	}
 
 	/**
-	 * @param imgUrl the imgUrl to set
+	 * @param imgPath the imgPath to set
 	 */
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setImgPath(String imgUrl) {
+		this.imgPath = imgUrl;
 	}
 
 }
