@@ -12,7 +12,7 @@ import com.powerchord.services.RoleService;
 //import java.util.stream.Collectors;
 //import java.util.stream.IntStream;
 //import java.util.ArrayList;
-//import java.util.List;
+import java.util.List;
 
 //import com.powerchord.models.Country;
 //import com.powerchord.models.Genre;
@@ -67,19 +67,24 @@ public class Main {
 //		});
 		
 //		Role role = new Role("Singer");
-//		RoleService rs = new RoleService();
+		RoleService rs = new RoleService();
 //		boolean isRoleCreated = rs.create(role);
 //		System.out.println(isRoleCreated);
+		List<Role> roles = rs.getAll();
+		roles.forEach(role -> {
+			System.out.println(role.getRoleName());
+		});
 		
-		Personnel personnel = new Personnel(
-				"Kate Bush",
-				"Catherine Bush (born 30 July 1958) is an English singer, songwriter, record producer and dancer. In 1978, at the age of 19, she topped the UK Singles Chart for four weeks with her debut single \"Wuthering Heights\", becoming the first female artist to achieve a UK number one with a solely self-written song.",
-				(long) 186,
-				"/img/kate_bush.jpg"
-				);
-		PersonnelService ps = new PersonnelService();
-		boolean isPersonnelCreated = ps.create(personnel);
-		System.out.println(isPersonnelCreated);
+//		Personnel personnel = new Personnel(
+//				"Kate Bush",
+//				"Catherine Bush (born 30 July 1958) is an English singer, songwriter, record producer and dancer. In 1978, at the age of 19, she topped the UK Singles Chart for four weeks with her debut single \"Wuthering Heights\", becoming the first female artist to achieve a UK number one with a solely self-written song.",
+//				(long) 186,
+//				"/img/kate_bush.jpg"
+//				);
+//		PersonnelService ps = new PersonnelService();
+//		boolean isPersonnelCreated = ps.create(personnel);
+//		System.out.println(isPersonnelCreated);
+		
 				
 
 	}

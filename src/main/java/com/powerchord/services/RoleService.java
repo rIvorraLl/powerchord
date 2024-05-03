@@ -2,7 +2,9 @@ package com.powerchord.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.powerchord.models.Role;
@@ -36,8 +38,19 @@ public class RoleService implements Serviceable<Role> {
 
 	@Override
 	public List<Role> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Role> roles = new ArrayList<Role>();
+		String sql = SqlStatements.GET_ALL_ROLES;
+		Connection conn = DbConnection.getInstance().getConnection();
+		try (PreparedStatement statement = conn.prepareStatement(sql)) {
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				String role_name = rs.getString("role_name");
+				roles.add(new Role(role_name));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return roles;
 	}
 
 	@Override

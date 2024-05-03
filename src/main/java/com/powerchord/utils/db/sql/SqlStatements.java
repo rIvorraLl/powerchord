@@ -13,6 +13,7 @@ public class SqlStatements {
 	public static final String GET_ALL_COUNTRIES = "SELECT * FROM countries";
 	// Role
 	public static final String INSERT_ROLE = "INSERT INTO roles (role_name) VALUES (?)";
+	public static final String GET_ALL_ROLES = "SELECT * FROM roles";
 	// Personnel
 	public static final String INSERT_PERSONNEL = "INSERT INTO personnel (name, biography, country_id, img_path)\n"
 			+ "VALUES (?, ?, ?, ?);";
