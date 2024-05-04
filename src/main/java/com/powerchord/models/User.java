@@ -25,6 +25,7 @@ public class User {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.createdAt = new Timestamp(System.currentTimeMillis());
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class User {
 	 * @return the createdAt
 	 */
 	public Timestamp getCreatedAt() {
-		return new Timestamp(System.currentTimeMillis());
+		return createdAt;
 	}
 
 	/**
@@ -82,6 +83,5 @@ public class User {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
+
 }

@@ -1,6 +1,5 @@
 package com.powerchord.utils.db;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -12,6 +11,8 @@ public class DbConnection {
 	private static final String user;
 	private static final String password;
 	private static final String url;
+	private static DbConnection instance;
+	private Connection connection;
 
 	static {
 		try {
@@ -23,25 +24,25 @@ public class DbConnection {
 		}
 	}
 
-	/**
-	 * Connect to the PostgreSQL database
-	 * @return a Connection object
-	 */
-	public static Connection connect() {
-		Connection conn = null;
-		try {
-			Class.forName("org.postgresql.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+	private DbConnection() {
 		try {
 			System.setErr(new PrintStream(new FileOutputStream(System.getProperty("user.home") + "/error.log"), true));
-			conn = DriverManager.getConnection(url, user, password);
+			connection = DriverManager.getConnection(url, user, password);
+		} catch (IOException e) {
+			throw new RuntimeException("Failed to load database properties", e);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		}
-		return conn;
+	}
+
+	public static synchronized DbConnection getInstance() {
+		if (instance == null) {
+			instance = new DbConnection();
+		}
+		return instance;
+	}
+
+	public Connection getConnection() {
+		return connection;
 	}
 }

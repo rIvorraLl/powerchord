@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Example background color */
+    font: 1.25rem;
+}
+
+main {
+    width: 80%; /* Adjust as needed */
+    max-width: 600px; /* Ensures the form doesn't get too wide on large screens */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
