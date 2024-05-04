@@ -72,7 +72,6 @@ public class GenreService implements Serviceable<Genre> {
 		Connection conn = DbConnection.getInstance().getConnection();
 		try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
 			preparedStatement.setLong(1, id);
-			System.out.println(preparedStatement);
 			try (ResultSet resultSet = preparedStatement.executeQuery()) {
 
 				if (resultSet.next()) {

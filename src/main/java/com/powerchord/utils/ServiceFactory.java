@@ -1,8 +1,10 @@
 package com.powerchord.utils;
 
 import com.powerchord.models.Genre;
+import com.powerchord.models.Label;
 import com.powerchord.models.Role;
 import com.powerchord.services.GenreService;
+import com.powerchord.services.LabelService;
 import com.powerchord.services.RoleService;
 import com.powerchord.services.Serviceable;
 
@@ -19,6 +21,8 @@ public class ServiceFactory {
 			return (Serviceable<T>) new GenreService();
 		} else if (modelClass == Role.class) {
 			return (Serviceable<T>) new RoleService();
+		} else if (modelClass == Label.class) {
+			return (Serviceable<T>) new LabelService();
 		}
 		throw new IllegalArgumentException("Unsupported model class: " + modelClass.getName());
 	}

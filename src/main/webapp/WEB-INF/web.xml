@@ -77,4 +77,24 @@
     <servlet-name>CreateRoleServlet</servlet-name>
     <url-pattern>/CreateRoleServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllLabelsServlet</display-name>
+    <servlet-name>GetAllLabelsServlet</servlet-name>
+    <servlet-class>com.powerchord.servlets.label.GetAllLabelsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllLabelsServlet</servlet-name>
+    <url-pattern>/GetAllLabelsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateLabelServlet</display-name>
+    <servlet-name>CreateLabelServlet</servlet-name>
+    <servlet-class>com.powerchord.servlets.label.CreateLabelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateLabelServlet</servlet-name>
+    <url-pattern>/CreateLabelServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -11,13 +11,21 @@ public class Label {
 	}
 
 	/**
+	 * Constructor with no labelId
+	 * 
+	 * @param labelName
+	 */
+	public Label(String labelName) {
+		this.labelName = labelName;
+	}
+
+	/**
 	 * Constructor with all params
 	 * 
 	 * @param labelId
 	 * @param labelName
 	 */
 	public Label(Long labelId, String labelName) {
-		super();
 		this.labelId = labelId;
 		this.labelName = labelName;
 	}

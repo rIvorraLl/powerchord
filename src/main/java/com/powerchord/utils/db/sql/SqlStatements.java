@@ -14,6 +14,9 @@ public class SqlStatements {
 	// Role
 	public static final String INSERT_ROLE = "INSERT INTO roles (role_name) VALUES (?)";
 	public static final String GET_ALL_ROLES = "SELECT * FROM roles";
+	// Label
+	public static final String INSERT_LABEL = "INSERT INTO labels (label_name) VALUES (?)";
+	public static final String GET_ALL_LABELS = "SELECT * FROM labels";
 	// Personnel
 	public static final String INSERT_PERSONNEL = "INSERT INTO personnel (name, biography, country_id, img_path)\n"
 			+ "VALUES (?, ?, ?, ?);";
