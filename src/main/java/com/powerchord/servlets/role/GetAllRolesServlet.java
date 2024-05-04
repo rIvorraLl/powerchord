@@ -36,7 +36,7 @@ public class GetAllRolesServlet extends HttpServlet {
 		response.setContentType("text/hml");
 		List<Role> roles = roleService.getAll();
 		request.setAttribute("roles", roles);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("app/role.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/app/role.jsp");
 		dispatcher.forward(request, response);
 	}
 }
