@@ -19,11 +19,26 @@
 	href="/powerchord/css/components/form.css">
 <link rel="stylesheet" type="text/css"
 	href="/powerchord/css/components/button.css">
+<script src="/powerchord/js/utils/formUtils.js"></script>
 </head>
 <body>
 	<jsp:include page="/components/toolbar.jsp" />
 	<jsp:include page="/components/sidebar.jsp" />
 	<main>
+		<button class="generic-button"
+			onclick="toggleFormVisibility('roleFormContainer')">Add new
+			role</button>
+		<div id="roleFormContainer" class="form-submit-container"
+			style="display: none;">
+			<form name="roleForm" method="post" action="CreateRoleServlet">
+				Role Name: <input type="text" name="roleName" class="form-input" />
+				<br />
+				<div class="form-submit-container">
+					<input class="form-submit" type="submit" value="Add Role" />
+				</div>
+			</form>
+		</div>
+
 		<h1>Roles</h1>
 		<div class="table-container">
 			<%

@@ -67,4 +67,14 @@
     <servlet-name>GetAllRolesServlet</servlet-name>
     <url-pattern>/GetAllRolesServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateRoleServlet</display-name>
+    <servlet-name>CreateRoleServlet</servlet-name>
+    <servlet-class>com.powerchord.servlets.role.CreateRoleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateRoleServlet</servlet-name>
+    <url-pattern>/CreateRoleServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
