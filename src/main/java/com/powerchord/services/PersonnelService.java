@@ -2,7 +2,9 @@ package com.powerchord.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.powerchord.models.Personnel;
@@ -45,8 +47,22 @@ public class PersonnelService implements Serviceable<Personnel> {
 
 	@Override
 	public List<Personnel> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Personnel> personnel = new ArrayList<Personnel>();
+		String sql = SqlStatements.GET_ALL_PERSONNEL;
+		Connection conn = DbConnection.getInstance().getConnection();
+		try (PreparedStatement statement = conn.prepareStatement(sql)) {
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				String name = rs.getString("name");
+				String biography = rs.getString("biography");
+				Long countryId = rs.getLong("country_id");
+				String imgPath = rs.getString("img_path");
+				personnel.add(new Personnel(name, biography, countryId, imgPath));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return personnel;
 	}
 
 	@Override

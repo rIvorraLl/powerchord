@@ -20,5 +20,6 @@ public class SqlStatements {
 	// Personnel
 	public static final String INSERT_PERSONNEL = "INSERT INTO personnel (name, biography, country_id, img_path)\n"
 			+ "VALUES (?, ?, ?, ?);";
+	public static final String GET_ALL_PERSONNEL = "SELECT * FROM personnel";
 
 }

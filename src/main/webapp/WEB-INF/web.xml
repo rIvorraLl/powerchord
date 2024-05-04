@@ -97,4 +97,24 @@
     <servlet-name>CreateLabelServlet</servlet-name>
     <url-pattern>/CreateLabelServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreatePersonnelServlet</display-name>
+    <servlet-name>CreatePersonnelServlet</servlet-name>
+    <servlet-class>com.powerchord.servlets.personnel.CreatePersonnelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreatePersonnelServlet</servlet-name>
+    <url-pattern>/CreatePersonnelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllPersonnelServlet</display-name>
+    <servlet-name>GetAllPersonnelServlet</servlet-name>
+    <servlet-class>com.powerchord.servlets.personnel.GetAllPersonnelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllPersonnelServlet</servlet-name>
+    <url-pattern>/GetAllPersonnelServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

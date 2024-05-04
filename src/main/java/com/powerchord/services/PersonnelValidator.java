@@ -17,6 +17,9 @@ public class PersonnelValidator implements Validatable<Personnel> {
 		if (personnel.getBiography().length() < 3 || personnel.getBiography().length() > 4000) {
 			return false;
 		}
+		if (personnel.getImgPath().length() < 3 || personnel.getImgPath().length() > 255) {
+			return false;
+		}
 
 		return true;
 	}
