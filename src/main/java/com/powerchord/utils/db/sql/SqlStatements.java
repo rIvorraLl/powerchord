@@ -11,6 +11,7 @@ public class SqlStatements {
 	// Country
 	public static final String INSERT_COUNTRY = "INSERT INTO (countries) VALUES (?)";
 	public static final String GET_ALL_COUNTRIES = "SELECT * FROM countries";
+	public static final String GET_ONE_COUNTRY ="SELECT * FROM countries WHERE country_id = ?";
 	// Role
 	public static final String INSERT_ROLE = "INSERT INTO roles (role_name) VALUES (?)";
 	public static final String GET_ALL_ROLES = "SELECT * FROM roles";

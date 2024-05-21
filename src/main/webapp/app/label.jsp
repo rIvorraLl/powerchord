@@ -26,8 +26,9 @@
 	<jsp:include page="/components/toolbar.jsp" />
 	<jsp:include page="/components/sidebar.jsp" />
 	<main>
-		<button class="generic-button" onclick="toggleFormVisibility('labelFormContainer')">Add
-			new label</button>
+		<button class="generic-button"
+			onclick="toggleFormVisibility('labelFormContainer')">Add new
+			label</button>
 		<div id="labelFormContainer" class="form-submit-container"
 			style="display: none;">
 			<form name="labelForm" method="post" action="CreateLabelServlet">

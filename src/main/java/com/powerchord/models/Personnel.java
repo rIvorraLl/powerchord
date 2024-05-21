@@ -6,6 +6,7 @@ public class Personnel {
 	private String biography;
 	private Long countryId;
 	private String imgPath;
+	private Country country;
 
 	/**
 	 * Constructor with no params
@@ -21,17 +22,36 @@ public class Personnel {
 	 * @param biography
 	 * @param countryId
 	 * @param imgPath
+	 * @param country
 	 */
-	public Personnel(Long personnelId, String name, String biography, Long countryId, String imgPath) {
+	public Personnel(Long personnelId, String name, String biography, Long countryId, String imgPath, Country country) {
 		this.personnelId = personnelId;
 		this.name = name;
 		this.biography = biography;
 		this.countryId = countryId;
 		this.imgPath = imgPath;
+		this.country = country;
+	}
+	
+	/**
+	 * Constructor with no personnelId
+	 * 
+	 * @param name
+	 * @param biography
+	 * @param countryId
+	 * @param imgPath
+	 * @param country
+	 */
+	public Personnel(String name, String biography, Long countryId, String imgPath, Country country) {
+		this.name = name;
+		this.biography = biography;
+		this.countryId = countryId;
+		this.imgPath = imgPath;
+		this.country = country;
 	}
 
 	/**
-	 * Constructor with no personnelId
+	 * Constructor with no personnelId & no Country
 	 * 
 	 * @param name
 	 * @param biography
@@ -113,5 +133,19 @@ public class Personnel {
 	 */
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
+	}
+
+	/**
+	 * @return the country
+	 */
+	public Country getCountry() {
+		return country;
+	}
+
+	/**
+	 * @param country the country to set
+	 */
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 }

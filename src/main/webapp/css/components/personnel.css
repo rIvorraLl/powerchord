@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.personnel-container {
+	display: flex;
+	flex-direction: column;
+	background: #f2f2f2;
+	margin: 5px;
+	flex-grow: 1;
+	flex-basis: calc(25% - 20px);
+	height: 150px;
+	border: 1px solid #ddd;
+	padding: 18px;
+	text-align: left;
+}
+
+.title-inline {
+	font-weight: bold;
+	color: #c64600;
+}

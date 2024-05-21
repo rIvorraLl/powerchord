@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.powerchord.models.Country;
 import com.powerchord.models.Personnel;
 import com.powerchord.utils.db.DbConnection;
 import com.powerchord.utils.db.sql.SqlStatements;
@@ -57,7 +58,9 @@ public class PersonnelService implements Serviceable<Personnel> {
 				String biography = rs.getString("biography");
 				Long countryId = rs.getLong("country_id");
 				String imgPath = rs.getString("img_path");
-				personnel.add(new Personnel(name, biography, countryId, imgPath));
+				CountryService cs = new CountryService();
+				Country  country = cs.getOne(countryId);
+				personnel.add(new Personnel(name, biography, countryId, imgPath, country));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

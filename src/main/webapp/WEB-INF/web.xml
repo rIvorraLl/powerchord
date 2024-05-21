@@ -117,4 +117,14 @@
     <servlet-name>GetAllPersonnelServlet</servlet-name>
     <url-pattern>/GetAllPersonnelServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetOneCountry</display-name>
+    <servlet-name>GetOneCountry</servlet-name>
+    <servlet-class>com.powerchord.servlets.GetOneCountry</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetOneCountry</servlet-name>
+    <url-pattern>/GetOneCountry</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -42,6 +42,11 @@ public class CountryService implements Serviceable<Country> {
 		return true;
 	}
 
+	/**
+	 * Get all countries
+	 * 
+	 * @return List<Country>
+	 */
 	@Override
 	public List<Country> getAll() {
 		List<Country> countries = new ArrayList<Country>();
@@ -60,9 +65,27 @@ public class CountryService implements Serviceable<Country> {
 		return countries;
 	}
 
+	/**
+	 * Get one country
+	 * 
+	 * @param id
+	 * @return Country
+	 */
 	@Override
 	public Country getOne(Long id) {
-		// TODO Auto-generated method stub
+		String sql = SqlStatements.GET_ONE_COUNTRY;
+		Connection conn = DbConnection.getInstance().getConnection();
+		try (PreparedStatement statement = conn.prepareStatement(sql)) {
+			statement.setLong(1, id)
+			;
+			try (ResultSet rs = statement.executeQuery()) {
+				if (rs.next()) {
+					return new Country(rs.getLong("country_id"), rs.getString("country_name"));
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
